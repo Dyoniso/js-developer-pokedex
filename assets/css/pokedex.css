@@ -84,6 +84,7 @@
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .pokemon .number {
@@ -162,4 +163,12 @@
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+}
+
+
+#backBtn {
+    padding: 8px;
+    margin: 8px;
+    background: red;
+    cursor: pointer;
 }

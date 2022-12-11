@@ -17,6 +17,22 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     return pokemon
 }
 
+function convertPokeApiDetailToPokemonPreview(pokeDetail) {
+    const pokemon = new PokemonPreview()
+    pokemon.number = pokeDetail.id
+    pokemon.name = pokeDetail.name
+
+    const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
+    const [type] = types
+
+    pokemon.types = types
+    pokemon.type = type
+
+    pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+
+    return pokemon
+}
+
 pokeApi.getPokemonDetail = (pokemon) => {
     return fetch(pokemon.url)
         .then((response) => response.json())
